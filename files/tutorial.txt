@@ -42,6 +42,24 @@ Criar arquivo .gitignore: dotnet new gitignore
 Criar um projeto console de dotnet: dotnet new console -o src/Poo.Console -n Poo.Console
 Executar um projeto console: dotnet run --project src/Poo.Console/
 
+
+
+#####   NO TERMINAL FORA DO CONTAINER PARA ENVIAR VIA GIT ##########
+
+# Criar repositósio 
+Vá no seu github e crie um novo repositório
+No terminal fora do container digite os seguintes comandos:
+    git init
+    git add .
+    git commit -m "inicialização do projeto"
+    git branch -M main
+    git remote add origin https://github.com/dayaneLima/ApresentacaoPooConsoleDotnet.git
+    git push -u origin main
+
+
+
+#####   VOLTANDO AO PROJETO NO TERMINAL DO CONTAINER ##########
+
 # Criando classes
 Criar a pasta onde ficará nossas classes: mkdir src/Poo.Console/Models
 Criar um arquivo .cs chamado Pessoa: touch src/Poo.Console/Models/Pessoa.cs

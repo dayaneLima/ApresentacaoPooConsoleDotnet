@@ -1,0 +1,48 @@
+#####   CRIAÇÃO DE PASTAS  ##########
+Criar uma pasta na raiz chamada files, para adicionar anotações, arquivos do docker-compose e afins.
+Criar uma pasta na raiz chamada src, onde ficará nosso código fonte.
+
+
+#####   CRIAÇÃO DE ARQUIVOS DOCKER  ##########
+Criar um arquivo chamado Dockerfile na raiz do projeto. (passarei o que deverá ter no arquivo)
+Criar um arquivo dentro de files chamado docker-compose.yml (que terá a configuração do container) 
+
+
+########################################################
+#####   COMANDOS DOCKER  ##########
+# Buildar a imagem
+docker-compose -f files/docker-compose.yml build
+
+# Subir o container
+docker-compose -f files/docker-compose.yml up -d
+
+# Matar o container
+docker-compose -f files/docker-compose.yml down
+
+# Entrar no terminal do container
+docker exec -it poo-container bash
+########################################################
+
+
+#####   EXECUÇÃO DO CONTAINER DOCKER  ##########
+Se não tiver o docker instalado, o instale.
+Abra o terminal na raiz do projeto.
+
+Digite o comando para buildar a imagem do docker: docker-compose -f files/docker-compose.yml build
+Digite o comando para subir o container: docker-compose -f files/docker-compose.yml up -d
+Digite o comando para entrar no terminal do container, que é onde está o nosso dotnet: docker exec -it poo-container bash
+
+
+#####   NO TERMINAL DO CONTAINER ##########
+
+# Inicialização 
+Comando para ver a versão do dotnet: dotnet --version
+Comando para ver as opções de criação de projeto: dotnet new list
+Criar arquivo .gitignore: dotnet new gitignore
+Criar um projeto console de dotnet: dotnet new console -o src/Poo.Console -n Poo.Console
+Executar um projeto console: dotnet run --project src/Poo.Console/
+
+# Criando classes
+Criar a pasta onde ficará nossas classes: mkdir src/Poo.Console/Models
+Criar um arquivo .cs chamado Pessoa: touch src/Poo.Console/Models/Pessoa.cs
+

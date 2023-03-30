@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+    dotnet-teste:
+      container_name: poo-container
+      build: 
+        context: ../
+        target: "development"
+      tty: true
+      ports:
+        - "5100:5000"
+        #- externa:interna
+      volumes:
+        - ../:/app
+        #- externa:interna
+      networks: 
+        - localdev
+        
+networks: 
+  localdev:
+    name: localdev
